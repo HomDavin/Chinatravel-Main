@@ -1,0 +1,11 @@
+{
+    "uid": "20250321152320931058",
+    "start_city": "上海",
+    "target_city": "深圳",
+    "days": 3,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"海上彩虹号\", \"西湾滨海公园\"}<=attraction_name_set)\nresult_list.append(result)\nrestaurant_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_name_set.add(activity_position(activity))\nresult=not({\"山禾田·创作料理(罗湖店)\", \"Paulaner·德国帕拉娜自酿啤酒餐厅(海上世界店)\"}&restaurant_name_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从上海出发，到深圳旅行3天，要求满足以下任意一个：\n1. 希望游览海上彩虹号 和 西湾滨海公园\n2. 不希望尝试以下餐厅：山禾田·创作料理(罗湖店) 和 Paulaner·德国帕拉娜自酿啤酒餐厅(海上世界店)"
+}

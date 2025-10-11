@@ -1,0 +1,11 @@
+{
+    "uid": "20250321180055038088",
+    "start_city": "成都",
+    "target_city": "重庆",
+    "days": 2,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"渝北龙头寺公园\"}<=attraction_name_set)\nresult_list.append(result)\nrestaurant_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_type_set.add(restaurant_type(activity, target_city(plan)))\nresult=({\"川菜\"}<=restaurant_type_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从成都出发，到重庆旅行2天，要求满足以下任意一个：\n1. 希望游览渝北龙头寺公园\n2. 希望尝试以下类型的餐厅川菜"
+}

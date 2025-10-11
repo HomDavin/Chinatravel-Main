@@ -1,0 +1,11 @@
+{
+    "uid": "20250321165758983860",
+    "start_city": "广州",
+    "target_city": "武汉",
+    "days": 3,
+    "people_number": 2,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=not({\"长江武汉关\", \"海底两万里\"}&attraction_name_set)\nresult_list.append(result)\nrestaurant_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_type_set.add(restaurant_type(activity, target_city(plan)))\nresult=not({\"火锅\"}&restaurant_type_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们2人，从广州出发，到武汉旅行3天，要求满足以下任意一个：\n1. 不希望游览长江武汉关 和 海底两万里\n2. 不希望尝试以下类型的餐厅火锅"
+}

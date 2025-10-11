@@ -1,0 +1,11 @@
+{
+    "uid": "20250321184959655643",
+    "start_city": "苏州",
+    "target_city": "杭州",
+    "days": 2,
+    "people_number": 2,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"杭州世纪中心\", \"钱塘江游船(滨江码头)\"}<=attraction_name_set)\nresult_list.append(result)\nrestaurant_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_cost+=activity_cost(activity)\nresult=restaurant_cost<=800\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们2人，从苏州出发，到杭州旅行2天，要求满足以下任意一个：\n1. 希望游览杭州世纪中心 和 钱塘江游船(滨江码头)\n2. 在用餐上的预算为800.0"
+}

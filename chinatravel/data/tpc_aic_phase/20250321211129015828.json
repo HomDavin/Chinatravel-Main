@@ -1,0 +1,16 @@
+{
+    "uid": "20250321211129015828",
+    "start_city": "北京",
+    "target_city": "深圳",
+    "days": 3,
+    "people_number": 1,
+    "hard_logic_py": [
+        "attraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"大沙河生态长廊\"}<=attraction_name_set)",
+        "accommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=not({\"苫也·深圳不若林度假民宿\", \"橙果酒店(前海宝安中心店)\"}&accommodation_name_set)",
+        "result=(day_count(plan)==3)",
+        "result=(people_count(plan)==1)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=1: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=1: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们1人，从北京出发，到深圳旅行3天，要求如下：\n希望游览大沙河生态长廊\n不希望入住以下酒店苫也·深圳不若林度假民宿 和 橙果酒店(前海宝安中心店)"
+}
