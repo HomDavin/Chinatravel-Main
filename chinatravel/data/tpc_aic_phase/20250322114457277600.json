@@ -1,0 +1,11 @@
+{
+    "uid": "20250322114457277600",
+    "start_city": "上海",
+    "target_city": "南京",
+    "days": 3,
+    "people_number": 2,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"红色景点\"}&attraction_type_set)\nresult_list.append(result)\ninner_city_transportation_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='transportation': inner_city_transportation_set.add(activity_position(activity))\nresult=not({\"walk\", \"taxi\"}&inner_city_transportation_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们2人，从上海出发，到南京旅行3天，要求满足以下任意一个：\n1. 希望游览红色景点\n2. 不希望以walk 和 taxi方式在城市内出行"
+}

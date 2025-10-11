@@ -1,0 +1,11 @@
+{
+    "uid": "20250322114359077804",
+    "start_city": "北京",
+    "target_city": "深圳",
+    "days": 3,
+    "people_number": 1,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"美术馆/艺术馆\"}<=attraction_type_set)\nresult_list.append(result)\naccommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=({\"维也纳酒店(深圳南山科技园店)\"}<=accommodation_name_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们1人，从北京出发，到深圳旅行3天，要求满足以下任意一个：\n1. 希望游览美术馆/艺术馆\n2. 希望入住以下酒店维也纳酒店(深圳南山科技园店)"
+}

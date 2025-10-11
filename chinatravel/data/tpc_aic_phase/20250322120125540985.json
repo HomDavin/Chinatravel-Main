@@ -1,0 +1,16 @@
+{
+    "uid": "20250322120125540985",
+    "start_city": "武汉",
+    "target_city": "上海",
+    "days": 4,
+    "people_number": 3,
+    "hard_logic_py": [
+        "attraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"美术馆/艺术馆\"}<=attraction_type_set)",
+        "attraction_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_cost+=activity_cost(activity)\nresult=attraction_cost<=300",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==3)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=3: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=3: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们3人，从武汉出发，到上海旅行4天，要求如下：\n希望游览美术馆/艺术馆\n在游览上的预算为300.0"
+}

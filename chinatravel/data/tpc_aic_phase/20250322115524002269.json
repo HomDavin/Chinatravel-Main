@@ -1,0 +1,11 @@
+{
+    "uid": "20250322115524002269",
+    "start_city": "成都",
+    "target_city": "武汉",
+    "days": 5,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"游乐园/体育娱乐\"}&attraction_type_set)\nresult_list.append(result)\nrestaurant_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_cost+=activity_cost(activity)\nresult=restaurant_cost<=2500\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从成都出发，到武汉旅行5天，要求满足以下任意一个：\n1. 希望游览游乐园/体育娱乐\n2. 在用餐上的预算为2500.0"
+}
