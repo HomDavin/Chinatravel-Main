@@ -1,0 +1,16 @@
+{
+    "uid": "20250322124410608837",
+    "start_city": "苏州",
+    "target_city": "杭州",
+    "days": 4,
+    "people_number": 4,
+    "hard_logic_py": [
+        "attraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"自然风光\"}&attraction_type_set)",
+        "result=False\nfor activity in allactivities(plan):\n  if activity_position(activity)=='飞来峰造像':\n    if activity_start_time(activity)<='08:10' and activity_end_time(activity)>='09:40':\n      result=True",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==4)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=4: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=4: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们4人，从苏州出发，到杭州旅行4天，要求如下：\n希望游览自然风光\n希望在08:10到09:40之间游览飞来峰造像"
+}

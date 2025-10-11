@@ -1,0 +1,16 @@
+{
+    "uid": "20250322124408439356",
+    "start_city": "重庆",
+    "target_city": "苏州",
+    "days": 2,
+    "people_number": 3,
+    "hard_logic_py": [
+        "attraction_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_cost+=activity_cost(activity)\nresult=attraction_cost<=0",
+        "accommodation_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_type_set.add(accommodation_type(activity, target_city(plan)))\nresult=({\"网红泳池\"}<=accommodation_type_set)",
+        "result=(day_count(plan)==2)",
+        "result=(people_count(plan)==3)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=3: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=3: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们3人，从重庆出发，到苏州旅行2天，要求如下：\n希望只游览免费景点\n希望入住以下类型的酒店网红泳池"
+}
