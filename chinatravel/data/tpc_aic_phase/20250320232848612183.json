@@ -1,0 +1,15 @@
+{
+    "uid": "20250320232848612183",
+    "start_city": "上海",
+    "target_city": "杭州",
+    "days": 4,
+    "people_number": 5,
+    "hard_logic_py": [
+        "accommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=not({\"美豪丽致酒店(杭州西溪湿地科技城店)\", \"林隐西庐民宿(杭州西湖吴山广场店)\"}&accommodation_name_set)",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==5)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=5: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=5: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=2: result=False"
+    ],
+    "nature_language": "我们5人，从上海出发，到杭州旅行4天，要求如下：\n不希望入住以下酒店美豪丽致酒店(杭州西溪湿地科技城店) 和 林隐西庐民宿(杭州西湖吴山广场店)"
+}

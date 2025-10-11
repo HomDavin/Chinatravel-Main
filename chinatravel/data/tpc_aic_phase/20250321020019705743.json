@@ -1,0 +1,15 @@
+{
+    "uid": "20250321020019705743",
+    "start_city": "重庆",
+    "target_city": "深圳",
+    "days": 2,
+    "people_number": 4,
+    "hard_logic_py": [
+        "inner_city_transportation_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='transportation': inner_city_transportation_set.add(activity_position(activity))\nresult=not({\"metro\", \"walk\"}&inner_city_transportation_set)",
+        "result=(day_count(plan)==2)",
+        "result=(people_count(plan)==4)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=4: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=4: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们4人，从重庆出发，到深圳旅行2天，要求如下：\n不希望以metro 和 walk方式在城市内出行"
+}

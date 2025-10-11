@@ -1,0 +1,15 @@
+{
+    "uid": "20250320234446764130",
+    "start_city": "武汉",
+    "target_city": "深圳",
+    "days": 3,
+    "people_number": 2,
+    "hard_logic_py": [
+        "accommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=not({\"深圳圣淘沙酒店(翡翠店)\", \"HEY VILLA·熹遇见私汤别墅\"}&accommodation_name_set)",
+        "result=(day_count(plan)==3)",
+        "result=(people_count(plan)==2)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=2: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=2: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们2人，从武汉出发，到深圳旅行3天，要求如下：\n不希望入住以下酒店深圳圣淘沙酒店(翡翠店) 和 HEY VILLA·熹遇见私汤别墅"
+}
