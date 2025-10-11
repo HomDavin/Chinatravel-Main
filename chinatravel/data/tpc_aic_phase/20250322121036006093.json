@@ -1,0 +1,16 @@
+{
+    "uid": "20250322121036006093",
+    "start_city": "成都",
+    "target_city": "苏州",
+    "days": 3,
+    "people_number": 3,
+    "hard_logic_py": [
+        "attraction_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_cost+=activity_cost(activity)\nresult=attraction_cost<=0",
+        "inner_city_transportation_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='transportation': inner_city_transportation_set.add(activity_position(activity))\nresult=not({\"metro\"}&inner_city_transportation_set)",
+        "result=(day_count(plan)==3)",
+        "result=(people_count(plan)==3)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=3: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=3: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们3人，从成都出发，到苏州旅行3天，要求如下：\n希望只游览免费景点\n不希望以metro方式在城市内出行"
+}

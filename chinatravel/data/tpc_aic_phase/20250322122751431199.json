@@ -1,0 +1,11 @@
+{
+    "uid": "20250322122751431199",
+    "start_city": "深圳",
+    "target_city": "上海",
+    "days": 3,
+    "people_number": 4,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_cost+=activity_cost(activity)\nresult=attraction_cost<=1600\nresult_list.append(result)\ninner_city_transportation_cost=0 \nfor activity in allactivities(plan):\n    inner_city_transportation_cost += innercity_transport_cost(activity_transports(activity))\nresult=(inner_city_transportation_cost<=750)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们4人，从深圳出发，到上海旅行3天，要求满足以下任意一个：\n1. 在游览上的预算为1600.0\n2. 在城市内出行的预算为750.0"
+}

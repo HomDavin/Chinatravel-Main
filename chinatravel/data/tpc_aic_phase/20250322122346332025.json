@@ -1,0 +1,11 @@
+{
+    "uid": "20250322122346332025",
+    "start_city": "南京",
+    "target_city": "北京",
+    "days": 2,
+    "people_number": 5,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_cost+=activity_cost(activity)\nresult=attraction_cost<=400\nresult_list.append(result)\naccommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=({\"北京金融街威斯汀大酒店\"}&accommodation_name_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们5人，从南京出发，到北京旅行2天，要求满足以下任意一个：\n1. 在游览上的预算为400.0\n2. 希望入住以下酒店之一北京金融街威斯汀大酒店"
+}
