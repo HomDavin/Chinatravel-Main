@@ -1,0 +1,16 @@
+{
+    "uid": "20250321220244942302",
+    "start_city": "北京",
+    "target_city": "武汉",
+    "days": 4,
+    "people_number": 5,
+    "hard_logic_py": [
+        "attraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"汉街\"}&attraction_name_set)",
+        "accommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=not({\"柏曼酒店(武汉光谷科技会展中心大悦城店)\", \"中青·秋果酒店(武汉关山大道光谷软件园店)\"}&accommodation_name_set)",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==5)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=5: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=5: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=2: result=False"
+    ],
+    "nature_language": "我们5人，从北京出发，到武汉旅行4天，要求如下：\n希望游览汉街\n不希望入住以下酒店柏曼酒店(武汉光谷科技会展中心大悦城店) 和 中青·秋果酒店(武汉关山大道光谷软件园店)"
+}

@@ -1,0 +1,11 @@
+{
+    "uid": "20250322023438072588",
+    "start_city": "苏州",
+    "target_city": "杭州",
+    "days": 2,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=not({\"富春桃源\", \"万松书院\", \"如梦上塘\"}&attraction_name_set)\nresult_list.append(result)\naccommodation_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_cost+=activity_cost(activity)\nresult=accommodation_cost<=1800\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从苏州出发，到杭州旅行2天，要求满足以下任意一个：\n1. 不希望游览富春桃源 和 万松书院 和 如梦上塘\n2. 在住宿上的预算为1800.0"
+}
