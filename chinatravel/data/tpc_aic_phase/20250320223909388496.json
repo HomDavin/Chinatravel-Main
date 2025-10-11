@@ -1,0 +1,15 @@
+{
+    "uid": "20250320223909388496",
+    "start_city": "广州",
+    "target_city": "杭州",
+    "days": 4,
+    "people_number": 1,
+    "hard_logic_py": [
+        "restaurant_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_cost+=activity_cost(activity)\nresult=restaurant_cost<=1600",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==1)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=1: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=1: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们1人，从广州出发，到杭州旅行4天，要求如下：\n在用餐上的预算为1600.0"
+}
