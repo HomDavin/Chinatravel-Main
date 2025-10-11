@@ -9,7 +9,7 @@
 
 ### 环境约束
 环境约束评价了输出规划方案中的信息是否与提供的沙盒环境信息一致，度量了规划方案的可行性。
-[环境约束说明文档](../chinatravel/symbol_verification/readme.md)
+
 
 
 $$EPR-micro = \frac{\sum_{p\in P}\sum_{\in Env} 1_{passed(c,p)}}{|P|*|Env|}$$
