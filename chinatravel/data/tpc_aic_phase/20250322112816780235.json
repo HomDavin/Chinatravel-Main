@@ -1,0 +1,11 @@
+{
+    "uid": "20250322112816780235",
+    "start_city": "深圳",
+    "target_city": "上海",
+    "days": 3,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"游乐园/体育娱乐\"}&attraction_type_set)\nresult_list.append(result)\ninter_city_transportation_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['airplane','train']: inter_city_transportation_cost+=activity_cost(activity)\nresult=inter_city_transportation_cost<=3500\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从深圳出发，到上海旅行3天，要求满足以下任意一个：\n1. 希望游览游乐园/体育娱乐\n2. 跨城市交通的预算为3500.0"
+}

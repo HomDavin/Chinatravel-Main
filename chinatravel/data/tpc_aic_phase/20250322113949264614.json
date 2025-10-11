@@ -1,0 +1,16 @@
+{
+    "uid": "20250322113949264614",
+    "start_city": "重庆",
+    "target_city": "成都",
+    "days": 5,
+    "people_number": 5,
+    "hard_logic_py": [
+        "attraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"文殊坊\"}<=attraction_name_set)",
+        "inter_city_transportation_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['airplane','train']: inter_city_transportation_cost+=activity_cost(activity)\nresult=inter_city_transportation_cost<=2200",
+        "result=(day_count(plan)==5)",
+        "result=(people_count(plan)==5)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=5: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=5: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=2: result=False"
+    ],
+    "nature_language": "我们5人，从重庆出发，到成都旅行5天，要求如下：\n希望游览文殊坊\n跨城市交通的预算为2200.0"
+}
