@@ -1,0 +1,16 @@
+{
+    "uid": "20250322095938336490",
+    "start_city": "苏州",
+    "target_city": "南京",
+    "days": 2,
+    "people_number": 3,
+    "hard_logic_py": [
+        "attraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"公园\"}&attraction_type_set)",
+        "accommodation_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_type_set.add(accommodation_type(activity, target_city(plan)))\nresult=({\"免费停车\"}&accommodation_type_set)",
+        "result=(day_count(plan)==2)",
+        "result=(people_count(plan)==3)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=3: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=3: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们3人，从苏州出发，到南京旅行2天，要求如下：\n希望游览公园\n希望入住以下类型的酒店之一免费停车"
+}

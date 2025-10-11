@@ -1,0 +1,16 @@
+{
+    "uid": "20250322102104636925",
+    "start_city": "上海",
+    "target_city": "深圳",
+    "days": 4,
+    "people_number": 3,
+    "hard_logic_py": [
+        "attraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=not({\"大学校园\"}&attraction_type_set)",
+        "restaurant_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['breakfast', 'lunch', 'dinner']: restaurant_type_set.add(restaurant_type(activity, target_city(plan)))\nresult=({\"北京菜\", \"烧烤\", \"日本料理\"}&restaurant_type_set)",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==3)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=3: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=3: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们3人，从上海出发，到深圳旅行4天，要求如下：\n不希望游览大学校园\n希望尝试以下类型的餐厅之一北京菜 或 烧烤 或 日本料理"
+}

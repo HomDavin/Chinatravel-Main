@@ -1,0 +1,11 @@
+{
+    "uid": "20250322102845672442",
+    "start_city": "南京",
+    "target_city": "北京",
+    "days": 2,
+    "people_number": 5,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"商业街区\"}<=attraction_type_set)\nresult_list.append(result)\naccommodation_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_type_set.add(accommodation_type(activity, target_city(plan)))\nresult=({\"免费停车\"}<=accommodation_type_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们5人，从南京出发，到北京旅行2天，要求满足以下任意一个：\n1. 希望游览商业街区\n2. 希望入住以下类型的酒店免费停车"
+}
