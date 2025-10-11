@@ -1,0 +1,11 @@
+{
+    "uid": "20250322035825980704",
+    "start_city": "苏州",
+    "target_city": "北京",
+    "days": 3,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=({\"北海公园\", \"古观象台\"}<=attraction_name_set)\nresult_list.append(result)\ninner_city_transportation_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='transportation': inner_city_transportation_set.add(activity_position(activity))\nresult=not({\"walk\", \"taxi\"}&inner_city_transportation_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从苏州出发，到北京旅行3天，要求满足以下任意一个：\n1. 希望游览北海公园 和 古观象台\n2. 不希望以walk 和 taxi方式在城市内出行"
+}

@@ -1,0 +1,16 @@
+{
+    "uid": "20250322040834959389",
+    "start_city": "苏州",
+    "target_city": "上海",
+    "days": 3,
+    "people_number": 1,
+    "hard_logic_py": [
+        "attraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=not({\"松江梦幻水世界\", \"佘山国家森林公园\"}&attraction_name_set)",
+        "inner_city_transportation_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='transportation': inner_city_transportation_set.add(activity_position(activity))\nresult=not({\"taxi\"}&inner_city_transportation_set)",
+        "result=(day_count(plan)==3)",
+        "result=(people_count(plan)==1)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=1: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=1: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们1人，从苏州出发，到上海旅行3天，要求如下：\n不希望游览松江梦幻水世界 和 佘山国家森林公园\n不希望以taxi方式在城市内出行"
+}

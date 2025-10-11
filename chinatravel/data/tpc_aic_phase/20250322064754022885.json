@@ -1,0 +1,11 @@
+{
+    "uid": "20250322064754022885",
+    "start_city": "杭州",
+    "target_city": "苏州",
+    "days": 3,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=not({\"虎丘山风景名胜区-虎丘塔\", \"黎里古镇\", \"瑞光塔\"}&attraction_name_set)\nresult_list.append(result)\nresult=False\nintercity_transport_go=''\nintercity_transport_back=''\nif allactivities(plan)[0]['type'] == \"train\" and intercity_transport_origin(allactivities(plan)[0])==start_city(plan) and allactivities(plan)[-1]['type'] == \"train\" and intercity_transport_origin(allactivities(plan)[-1])==target_city(plan):\n  result=True\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从杭州出发，到苏州旅行3天，要求满足以下任意一个：\n1. 不希望游览虎丘山风景名胜区-虎丘塔 和 黎里古镇 和 瑞光塔\n2. 希望乘坐train前往目的地，乘坐train返回"
+}
