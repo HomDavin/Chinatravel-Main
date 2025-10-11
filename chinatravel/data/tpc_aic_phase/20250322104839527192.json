@@ -1,0 +1,11 @@
+{
+    "uid": "20250322104839527192",
+    "start_city": "上海",
+    "target_city": "深圳",
+    "days": 4,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"历史古迹\"}<=attraction_type_set)\nresult_list.append(result)\naccommodation_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_name_set.add(activity_position(activity))\nresult=({\"深圳皇悦豪生酒店\"}<=accommodation_name_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从上海出发，到深圳旅行4天，要求满足以下任意一个：\n1. 希望游览历史古迹\n2. 希望入住以下酒店深圳皇悦豪生酒店"
+}

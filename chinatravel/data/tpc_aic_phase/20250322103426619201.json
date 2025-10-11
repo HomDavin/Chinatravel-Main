@@ -1,0 +1,11 @@
+{
+    "uid": "20250322103426619201",
+    "start_city": "苏州",
+    "target_city": "重庆",
+    "days": 3,
+    "people_number": 1,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_type_set.add(attraction_type(activity, target_city(plan)))\nresult=({\"历史古迹\"}<=attraction_type_set)\nresult_list.append(result)\naccommodation_type_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='accommodation': accommodation_type_set.add(accommodation_type(activity, target_city(plan)))\nresult=({\"免费停车\"}<=accommodation_type_set)\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们1人，从苏州出发，到重庆旅行3天，要求满足以下任意一个：\n1. 希望游览历史古迹\n2. 希望入住以下类型的酒店免费停车"
+}
