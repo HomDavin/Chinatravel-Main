@@ -1,0 +1,11 @@
+{
+    "uid": "20250321132445722607",
+    "start_city": "杭州",
+    "target_city": "苏州",
+    "days": 3,
+    "people_number": 3,
+    "hard_logic_py": [
+        "result_list=[]\nattraction_name_set=set()\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_name_set.add(activity_position(activity))\nresult=not({\"陆巷古村\", \"苏州古运河游船(新市桥码头)\", \"瑞光塔\"}&attraction_name_set)\nresult_list.append(result)\nattraction_cost=0\nfor activity in allactivities(plan):\n  if activity_type(activity)=='attraction': attraction_cost+=activity_cost(activity)\nresult=attraction_cost<=0\nresult_list.append(result)\nresult=False\nfor r in result_list:\n  result=result or r"
+    ],
+    "nature_language": "我们3人，从杭州出发，到苏州旅行3天，要求满足以下任意一个：\n1. 不希望游览陆巷古村 和 苏州古运河游船(新市桥码头) 和 瑞光塔\n2. 希望只游览免费景点"
+}

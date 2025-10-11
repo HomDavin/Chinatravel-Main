@@ -1,0 +1,15 @@
+{
+    "uid": "20250321060522634372",
+    "start_city": "成都",
+    "target_city": "杭州",
+    "days": 4,
+    "people_number": 4,
+    "hard_logic_py": [
+        "result=False\nfor activity in allactivities(plan):\n  if activity_position(activity)=='鼓楼':\n    if activity_time(activity)>=90:\n      result=True",
+        "result=(day_count(plan)==4)",
+        "result=(people_count(plan)==4)",
+        "result=True\nfor activity in allactivities(plan):\n  if activity_type(activity) in ['attraction', 'airplane', 'train'] and activity_tickets(activity)!=4: result=False\n  if innercity_transport_type(activity_transports(activity))=='metro'and metro_tickets(activity_transports(activity))!=4: result=False",
+        "result=True\nfor activity in allactivities(plan):\n  if innercity_transport_type(activity_transports(activity))=='taxi'and taxi_cars(activity_transports(activity))!=1: result=False"
+    ],
+    "nature_language": "我们4人，从成都出发，到杭州旅行4天，要求如下：\n希望在鼓楼停留不少于90分钟"
+}
