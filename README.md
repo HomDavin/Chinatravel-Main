@@ -1,4 +1,4 @@
-# Chinatravel
+# Chinatravel-Main
 个人比赛专用
 
 ## 比赛阶段
